@@ -1,0 +1,82 @@
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Formulário de Freelancer</title>
+</head>
+<body>
+  <form>
+    <fieldset>
+        <h3>Formulário de Freelancer</h3>
+        <label>Nome <span class="obrigatorio">*</span>
+          <input type="text" name="nome" placeholder="Insira seu nome" required>
+        </label>
+        <label>Sobrenome <span class="obrigatorio">*</span>
+          <input type="text" name="sobrenome" placeholder="Insira seu sobrenome" required>
+        </label>
+        <label>Telefone <span class="obrigatorio">*</span>
+          <input type="tel" name="telefone" placeholder="(99)99999-9999" required>
+        </label>
+        <label>E-mail <span class="obrigatorio">*</span>
+          <input type="email" name="email" placeholder="Insira seu e-mail" required>
+        </label>
+        <label>Mensagem <span class="obrigatorio">*</span>
+          <textarea name="mensagem" placeholder="Informe o que deseja." required></textarea>
+        </label>
+        <label>Língua
+          <select name="lingua">
+            <option>Português (pt-br)</option>
+            <option>Inglês (en)</option>
+          </select>
+        </label>
+        <label>Protótipo (Requisitos)
+          <input type="file" name="prototipo">
+        </label>
+        <label>As linguagens que você prefere?</label>
+        <button type="button" class="toggle-btn" onclick="toggleLinguagens()">Mostrar / Ocultar</button>
+        <div class="toggle-content" id="linguagensDiv">
+          <select name="linguagens" multiple size="5">
+            <option>Java</option>
+            <option>C</option>
+            <option>C++</option>
+            <option>PHP</option>
+            <option>Python</option>
+            <option>JavaScript</option>
+          </select>
+          <br>
+          <small>(Para fazer várias escolhas, mantenha a tecla CTRL pressionada)</small>
+        </div>
+        <label>Banco de Dados</label>
+        <div class="inline-radio">
+          <label><input type="radio" name="banco" value="MySQL" checked> MySQL</label> |
+          <label><input type="radio" name="banco" value="Postgresql"> Postgresql</label> |
+          <label><input type="radio" name="banco" value="MongoDB"> MongoDB</label> |
+          <label><input type="radio" name="banco" value="NA"> N/A</label> |
+          <label><input type="radio" name="banco" value="Outro"> Outra</label> 
+        </div> 
+        <div class="inline-radio">
+        <label>Turno para Reuniões <span class="obrigatorio">*</span></label> |
+        <label><input type="checkbox" name="turno" value="manha"> Manhã</label> |
+        <label><input type="checkbox" name="turno" value="tarde"> Tarde</label> |
+        <label><input type="checkbox" name="turno" value="noite"> Noite</label> 
+        </div>
+        <label>Horário Sugerido
+          <input type="time" name="horario">
+        </label>
+        <label>Data Prevista Entrega <span class="obrigatorio">*</span>
+          <input type="date" name="data_entrega" required>
+        </label>
+        <br><br>
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpar</button>
+        <p><span class="obrigatorio">*</span> Campos Obrigatórios</p>
+    </fieldset>
+  </form>
+  <script>
+    function toggleLinguagens() {
+      const div = document.getElementById("linguagensDiv");
+      div.style.display = (div.style.display === "none" || div.style.display === "") ? "block" : "none";
+    }
+  </script>
+</body>
+</html>
